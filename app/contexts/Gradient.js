@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import ThemeContext from "./Theme";
 
-const Gradient = ({children}) => {
+const Gradient = ({ children }) => {
   const theme = useContext(ThemeContext);
 
   return (

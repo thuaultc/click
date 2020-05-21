@@ -7,12 +7,12 @@ const CardList = ({ navigation }) => {
     <View style={styles.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={[
-          { key: "1" },
-          { key: "2" },
-          { key: "3" }
-        ]}
-        renderItem={({ item }) => <Card navigation={navigation} key={item.key}>{item.key}</Card>}
+        data={[{ key: "1" }, { key: "2" }, { key: "3" }]}
+        renderItem={({ item }) => (
+          <Card navigation={navigation} key={item.key}>
+            {item.key}
+          </Card>
+        )}
       />
     </View>
   );

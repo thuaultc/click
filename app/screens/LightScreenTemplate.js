@@ -32,7 +32,7 @@ const LightScreenTemplate = ({ children, navigation }) => {
         <Header />
       </View>
       <View style={stylesheet.body}>
-        <CardList navigation={navigation}/>
+        <CardList navigation={navigation} />
         {children}
       </View>
     </View>

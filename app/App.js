@@ -46,7 +46,7 @@ const App = () => {
   return (
     <ErrorBoundary onError={errorHandler}>
       <ThemeProvider value={themes.click}>
-        <ButtonScreenTemplate />
+        <AppContainer />
       </ThemeProvider>
     </ErrorBoundary>
   );

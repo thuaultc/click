@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 
 const Card = ({ children, navigation }) => {
-  const onPress = () => navigation.navigate('routeTemplateScreen');
+  const onPress = () => navigation.navigate("routeTemplateScreen");
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>

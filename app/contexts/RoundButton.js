@@ -41,9 +41,7 @@ const RoundButton = ({ children, onPress }) => {
         locations={[0, 1]}
         style={stylesheet.gradientStyle}
       >
-        <View style={stylesheet.view}>
-          {children}
-        </View>
+        <View style={stylesheet.view}>{children}</View>
       </LinearGradient>
     </TouchableOpacity>
   );

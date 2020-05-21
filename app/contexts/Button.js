@@ -43,7 +43,7 @@ const Button = ({ children }) => {
     "Montserrat-Regular": require("../assets/fonts/Montserrat-Regular.ttf")
   });
 
-  const onPress = () => console.log('test');
+  const onPress = () => console.log("test");
 
   if (!fontsLoaded) {
     return <AppLoading />;

@@ -8,7 +8,6 @@ import TallyCounter from "../components/TallyCounter";
 import Button from "../contexts/Button";
 import LightButton from "../contexts/LightButton";
 
-
 const ButtonScreenTemplate = ({ navigation }) => {
   return (
     <ScreenTemplate
@@ -17,7 +16,7 @@ const ButtonScreenTemplate = ({ navigation }) => {
       children2={
         <View>
           <Button>REINITIALISER LE COMPTEUR</Button>
-        <LightButton>LIGHT BUTTON</LightButton>
+          <LightButton>LIGHT BUTTON</LightButton>
         </View>
       }
     />

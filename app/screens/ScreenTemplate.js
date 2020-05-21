@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import ThemeContext from "../contexts/Theme";
 import Header from "../contexts/Header";
@@ -13,8 +13,7 @@ function usePageStylesheet() {
       flex: 1
     },
     focus: {
-      height: 320,
-      elevation: 10
+      height: 320
     },
     background: {
       flexGrow: 1,
@@ -38,9 +37,7 @@ const ScreenTemplate = ({ children, children2 }) => {
         </Gradient>
       </View>
       <View style={stylesheet.background}>
-        <View style={stylesheet.body}>
-          {children2}
-        </View>
+        <View style={stylesheet.body}>{children2}</View>
       </View>
     </View>
   );
