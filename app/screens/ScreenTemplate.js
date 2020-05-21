@@ -18,8 +18,10 @@ function usePageStylesheet() {
     },
     background: {
       flexGrow: 1,
-      backgroundColor: theme.backgroundColor,
-      margin: 32
+      backgroundColor: theme.backgroundColor
+    },
+    body: {
+      margin: 16
     }
   });
 }
@@ -36,7 +38,9 @@ const ScreenTemplate = ({ children, children2 }) => {
         </Gradient>
       </View>
       <View style={stylesheet.background}>
-        {children2}
+        <View style={stylesheet.body}>
+          {children2}
+        </View>
       </View>
     </View>
   );

@@ -9,9 +9,7 @@ import ThemeContext from "./Theme";
 function usePageStylesheet() {
   return StyleSheet.create({
     gradientStyle: {
-      height: 48,
-      alignItems: "center",
-      justifyContent: "center"
+      height: 48
     },
     view: {
       flex: 1,
@@ -20,21 +18,12 @@ function usePageStylesheet() {
       alignSelf: "center"
     },
     container: {
-      flex: 1,
-      alignItems: "center",
-      backgroundColor: "white"
-    },
-    buttonContainer: {
-      width: 382,
-      alignItems: "center"
+      flex: 1
     },
     buttonText: {
       textAlign: "center",
       color: "black",
-      padding: 15,
       width: 382,
-      alignSelf: "center",
-      marginLeft: 10,
       fontFamily: "Montserrat-Regular",
       fontSize: 18
     }
@@ -55,7 +44,7 @@ const LightButton = ({ children }) => {
     return <AppLoading />;
   } else {
     return (
-      <TouchableOpacity style={stylesheet.container} onPress={onPress}>
+      <View style={stylesheet.container}>
         <LinearGradient
           colors={[theme.primaryColor, theme.secondaryColor]}
           start={[0, 0.8]}
@@ -63,11 +52,11 @@ const LightButton = ({ children }) => {
           locations={[0, 1]}
           style={stylesheet.gradientStyle}
         >
-          <View style={stylesheet.view}>
+          <TouchableOpacity style={stylesheet.view} onPress={onPress}>
             <Text style={stylesheet.buttonText}>{children}</Text>
-          </View>
+          </TouchableOpacity>
         </LinearGradient>
-      </TouchableOpacity>
+      </View>
     );
   }
 };

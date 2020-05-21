@@ -11,7 +11,6 @@ function usePageStylesheet() {
     },
     view: {
       flex: 1,
-      borderRadius: 32,
       justifyContent: "center",
       alignItems: "center",
       alignSelf: "center"
