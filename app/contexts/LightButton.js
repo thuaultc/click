@@ -10,6 +10,7 @@ function usePageStylesheet() {
   return StyleSheet.create({
     gradientStyle: {
       height: 48,
+      width: 382,
       borderBottomLeftRadius: 5,
       borderBottomRightRadius: 5,
       borderTopLeftRadius: 5,
@@ -19,7 +20,10 @@ function usePageStylesheet() {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      alignSelf: "center"
+      alignSelf: "center",
+      height: "100%",
+      width: "100%",
+      padding: 3
     },
     container: {
       flex: 1
@@ -27,7 +31,6 @@ function usePageStylesheet() {
     buttonText: {
       textAlign: "center",
       color: "black",
-      width: 382,
       fontFamily: "Montserrat-Regular",
       fontSize: 18
     }
@@ -41,8 +44,7 @@ const LightButton = ({ children }) => {
     "Montserrat-Regular": require("../assets/fonts/Montserrat-Regular.ttf")
   });
 
-  const onPress = () => console.log('test');
-
+  const onPress = () => console.log("test");
 
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -57,7 +59,22 @@ const LightButton = ({ children }) => {
           style={stylesheet.gradientStyle}
         >
           <TouchableOpacity style={stylesheet.view} onPress={onPress}>
-            <Text style={stylesheet.buttonText}>{children}</Text>
+            <View
+              style={{
+                backgroundColor: "white",
+                borderBottomLeftRadius: 3,
+                borderBottomRightRadius: 3,
+                borderTopLeftRadius: 3,
+                borderTopRightRadius: 3,
+                justifyContent: "center",
+                alignItems: "center",
+                alignSelf: "center",
+                height: "100%",
+                width: "100%"
+              }}
+            >
+              <Text style={stylesheet.buttonText}>{children}</Text>
+            </View>
           </TouchableOpacity>
         </LinearGradient>
       </View>
