@@ -1,0 +1,52 @@
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import { AppLoading, SplashScreen } from 'expo';
+import { Asset } from 'expo-asset';
+import BackgroundScreen from './screens/BackgroundScreen';
+
+export default class App extends React.Component {
+  state = { areResourcesReady: false, hideApp: true };
+
+  constructor(props) {
+    super(props);
+    SplashScreen.preventAutoHide(); // Instruct SplashScreen not to hide yet
+  }
+
+  componentDidMount() {
+    this.cacheResourcesAsync() // ask for resources
+      .then(() => this.setState({ areResourcesReady: true })) // mark resources as loaded
+      .catch(error => console.error(`Unexpected error thrown when loading:
+${error.stack}`));
+  }
+
+  render() {
+    if (!this.state.areResourcesReady) {
+      return null;
+    }
+
+    return (
+      <View style={{ flex: 1 }}>
+        {this.state.hideApp ? (
+          <Image
+            style={{ flex: 1, resizeMode: 'cover', width: "100%", height: "100%" }}
+            source={require('./assets/splash.png')}
+            onLoadEnd={() => {
+              console.log('Image#onLoadEnd: hiding SplashScreen');
+              SplashScreen.hide()
+              this.setState({hideApp: false})
+            }}
+            fadeDuration={0}
+          />
+        ) : (
+          <BackgroundScreen/>
+        )}
+      </View>
+    );
+  }
+
+  async cacheResourcesAsync() {
+    const images = [require('./assets/splash.png')];
+    const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
+    return Promise.all(cacheImages);
+  }
+}

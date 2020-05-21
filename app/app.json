@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "click_",
+    "slug": "click",
+    "privacy": "unlisted",
+    "platforms": [
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.thuaultc.click",
+      "versionCode": 1
+    }
+  }
+}
