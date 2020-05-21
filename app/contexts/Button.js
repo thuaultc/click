@@ -34,7 +34,7 @@ function usePageStylesheet() {
   });
 }
 
-const LightButton = ({ children }) => {
+const Button = ({ children }) => {
   const stylesheet = usePageStylesheet();
   const theme = useContext(ThemeContext);
   let [fontsLoaded] = useFonts({
@@ -42,7 +42,6 @@ const LightButton = ({ children }) => {
   });
 
   const onPress = () => console.log('test');
-
 
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -52,7 +51,7 @@ const LightButton = ({ children }) => {
         <LinearGradient
           colors={[theme.primaryColor, theme.secondaryColor]}
           start={[0, 0.8]}
-          end={[0.9, 0.2]}
+          end={[0.8, 0.2]}
           locations={[0, 1]}
           style={stylesheet.gradientStyle}
         >
@@ -65,4 +64,4 @@ const LightButton = ({ children }) => {
   }
 };
 
-export default LightButton;
+export default Button;

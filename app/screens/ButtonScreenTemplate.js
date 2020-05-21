@@ -5,7 +5,7 @@ import { View, Text } from "react-native";
 import ScreenTemplate from "./ScreenTemplate";
 import CardList from "../components/CardList";
 import TallyCounter from "../components/TallyCounter";
-import LightButton from "../contexts/LightButton";
+import Button from "../contexts/Button";
 
 const ButtonScreenTemplate = ({ navigation }) => {
   return (
@@ -14,7 +14,8 @@ const ButtonScreenTemplate = ({ navigation }) => {
       children={<TallyCounter />}
       children2={
         <View>
-          <LightButton><Text>CECI EST UN BOUTON</Text></LightButton>
+          <CardList/>
+          <Button>REINITIALISER LE COMPTEUR</Button>
         </View>
       }
     />
